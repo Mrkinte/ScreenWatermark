@@ -39,13 +39,13 @@ class WatermarkEditWidget(QWidget):
         if self.watermarkType == "TEXT":
             self.ui.textBtn.setEnabled(False)
             self.ui.stackedWidget.setCurrentIndex(0)
-            if cfg.get(cfg.fullWatermarkActivated):
+            if cfg.get(cfg.watermarkActivated):
                 self.ui.watermarkStatus.setText("水印状态：文字水印已启用")
         else:
             self.ui.imageBtn.setEnabled(False)
             self.ui.stackedWidget.setCurrentIndex(1)
             self.ui.bgWidget.setVisible(False)
-            if cfg.get(cfg.fullWatermarkActivated):
+            if cfg.get(cfg.watermarkActivated):
                 self.ui.watermarkStatus.setText("水印状态：图片水印已启用")
         self.ui.bgColorBtn.setStyleSheet(f"background-color:{self.param['bgColor']}; border: none; border-radius: 5px;")
         self.ui.bgOpacitySlider.setValue(self.param["bgOpacity"] * 100)

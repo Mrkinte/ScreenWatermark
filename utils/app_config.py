@@ -36,7 +36,7 @@ class AppConfig(QConfig):
     watermarkPosX = RangeConfigItem("Watermark", "PosX", 0, RangeValidator(0, 65535))
     watermarkPosY = RangeConfigItem("Watermark", "PosY", 0, RangeValidator(0, 65535))
     watermarkType = ConfigItem("Watermark", "Type", "TEXT")
-    watermarkBgColor = ConfigItem("Watermark", "BgColor", "#FFFFFF")
+    watermarkBgColor = ConfigItem("Watermark", "BgColor", "#7F7F7F")
     watermarkBgOpacity = RangeConfigItem("Watermark", "BgOpa", 1, RangeValidator(0, 1.0))
     watermarkBgRadius = RangeConfigItem("Watermark", "BgRadius", 10, RangeValidator(0, 100))
     watermarkOpacity = RangeConfigItem("Watermark", "Opa", 1, RangeValidator(0, 1.0))
