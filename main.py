@@ -8,7 +8,7 @@ from PySide6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
 from loguru import logger
 from qfluentwidgets import FluentTranslator
 
-from utils.app_config import cfg, AppConfig
+from utils.app_config import cfg, AppConfig, VERSION
 from utils.check_update import CheckUpdate
 from utils.web_channel import WebChannel
 from widgets.full_watermark_edit_widget import FullWatermarkEditWidget
@@ -179,7 +179,8 @@ class ScreenWatermark:
 
     def _tipUpdate(self, status, newVersion):
         if status and self.mainWindow:
-            showTips(f"发现新版本：{newVersion}")
+            if newVersion > VERSION:
+                showTips(f"发现新版本：{newVersion}")
 
 
 if __name__ == "__main__":
