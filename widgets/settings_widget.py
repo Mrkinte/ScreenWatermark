@@ -132,7 +132,7 @@ class SettingsWidget(QWidget):
 
     def _showUpdateInfo(self, status, newVersion, downloadUrl, updateContent):
         if status:
-            if newVersion >= VERSION:
+            if newVersion > VERSION:
                 updateWidget = UpdateWidget(newVersion, downloadUrl, updateContent)
                 if isDarkTheme():
                     updateWidget.setStyleSheet(updateWidget.property("darkCustomQss"))
