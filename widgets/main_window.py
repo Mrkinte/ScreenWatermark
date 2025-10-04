@@ -16,7 +16,7 @@ class MainWindow(SplitFluentWindow):
         MainWindow.deletedFlag = False
 
         self.setWindowIcon(QIcon(':/icons/favicon.png'))
-        self.setWindowTitle("桌面水印")
+        self.setWindowTitle("屏幕水印")
         self.resize(960, 720)
         self.navigationInterface.setExpandWidth(200)
 
