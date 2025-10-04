@@ -1,7 +1,7 @@
 <root>
-	<version>2.0.0</version>
+	<version>1.0.0</version>
 	<GitHub>
-		<link>https://github.com/Mrkinte/ScreenWatermark/releases/download/v2.0.0/ScreenWatermark_v2.0.0_ForWindows.zip</link>
+		<link>https://github.com/Mrkinte/ScreenWatermark/releases/download/v1.0.0/ScreenWatermark_V1.0.0_Setup.exe</link>
 	</GitHub>
 	<update_contents>
 		<contents_zh_cn>

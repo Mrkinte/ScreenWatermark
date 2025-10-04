@@ -47,7 +47,7 @@ class WatermarkEditWidget(QWidget):
             self.ui.bgWidget.setVisible(False)
             if cfg.get(cfg.fullWatermarkActivated):
                 self.ui.watermarkStatus.setText("水印状态：图片水印已启用")
-        self.ui.bgColorBtn.setStyleSheet(f"background-color:{self.param['bgColor']}; border: none;")
+        self.ui.bgColorBtn.setStyleSheet(f"background-color:{self.param['bgColor']}; border: none; border-radius: 5px;")
         self.ui.bgOpacitySlider.setValue(self.param["bgOpacity"] * 100)
         self.ui.bgRadiusSpinBox.setValue(self.param["bgRadius"])
         self.ui.watermarkOpacitySlider.setValue(self.param["watermarkOpacity"] * 100)
@@ -111,7 +111,7 @@ class WatermarkEditWidget(QWidget):
 
     def _bgColorChanged(self, color):
         self.param["bgColor"] = color.name()
-        self.ui.bgColorBtn.setStyleSheet(f"background-color:{color.name()}; border: none;")
+        self.ui.bgColorBtn.setStyleSheet(f"background-color:{color.name()}; border: none; border-radius: 5px;")
 
     def _bgOpacitySliderValueChanged(self, value):
         self.param["bgOpacity"] = value / 100.0

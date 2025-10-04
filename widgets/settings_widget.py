@@ -3,9 +3,10 @@ import shutil
 import sys
 
 import winshell
-from PySide6.QtWidgets import QWidget, QSpacerItem, QSizePolicy
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QWidget, QSpacerItem, QSizePolicy, QApplication
 from qfluentwidgets import FluentIcon, SwitchSettingCard, HyperlinkCard, PrimaryPushSettingCard, OptionsSettingCard, \
-    CustomColorSettingCard, setThemeColor, setTheme
+    CustomColorSettingCard, setThemeColor, setTheme, Theme, isDarkTheme
 from win32com.client import Dispatch
 
 from design.Ui_SettingsWidget import Ui_SettingsWidget
@@ -75,7 +76,7 @@ class SettingsWidget(QWidget):
         self.updateCard.clicked.connect(self._updateCardClicked)
 
         self.issueCard = HyperlinkCard(
-            url="https://github.com/Mrkinte/ScreenWaterMark/issues",
+            url="https://github.com/Mrkinte/ScreenWatermark/issues",
             text="跳转至Github",
             icon=FluentIcon.QUESTION,
             title="问题反馈",
@@ -133,6 +134,10 @@ class SettingsWidget(QWidget):
         if status:
             if newVersion >= VERSION:
                 updateWidget = UpdateWidget(newVersion, downloadUrl, updateContent)
+                if isDarkTheme():
+                    updateWidget.setStyleSheet(updateWidget.property("darkCustomQss"))
+                else:
+                    updateWidget.setStyleSheet(updateWidget.property("lightCustomQss"))
                 updateWidget.exec()
             else:
                 showTips("已是最新版本")

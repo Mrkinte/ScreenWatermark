@@ -1,8 +1,10 @@
 import os
 import sys
 
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QApplication
 from qfluentwidgets import QConfig, BoolValidator, ConfigItem, RangeValidator, qconfig, ConfigValidator, \
-    RangeConfigItem, OptionsConfigItem, OptionsValidator
+    RangeConfigItem, OptionsConfigItem, OptionsValidator, Theme, setTheme
 
 
 class StringValidator(ConfigValidator):
@@ -14,7 +16,7 @@ class StringValidator(ConfigValidator):
 
 
 class AppConfig(QConfig):
-    globalMainWindow = None     # 全局可访问主窗口
+    globalMainWindow = None  # 全局可访问主窗口
 
     # 配置文件所在目录
     if getattr(sys, 'frozen', False):
@@ -57,4 +59,3 @@ YEAR = 2025
 
 cfg = AppConfig()
 qconfig.load(AppConfig.configDir + "\\config.json", cfg)
-
