@@ -163,8 +163,9 @@ class ScreenWatermark:
             if filename.lower() == "屏幕水印.lnk".lower():
                 return
         cfg.set(cfg.enableAutoBoot, False)
-        if self.mainWindow.isVisible():
-            showTips("开机自启动快捷方式已失效，请重新设置。")
+        if self.mainWindow is not None:
+            if self.mainWindow.isVisible():
+                showTips("开机自启动快捷方式已失效，请重新设置。")
 
     ################
     # Slot methods #
