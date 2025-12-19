@@ -1,0 +1,8 @@
+<RCC>
+  <qresource>
+    <file>html/index.html</file>
+    <file>html/textWatermark.html</file>
+    <file>html/fullTextWatermark.html</file>
+    <file>icons/favicon.png</file>
+  </qresource>
+</RCC>

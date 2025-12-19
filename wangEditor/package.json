@@ -1,0 +1,22 @@
+{
+  "name": "wangeditor",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --outDir ../design/assets/html",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@wangeditor/editor": "^5.1.23",
+    "@wangeditor/editor-for-vue": "^5.1.12",
+    "vue": "^3.5.18"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "prettier": "3.6.2",
+    "vite": "^7.1.2",
+    "vite-plugin-singlefile": "^2.3.0"
+  }
+}
